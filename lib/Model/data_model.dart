@@ -14,17 +14,17 @@ class DataModel {
 
   DataModel(
       {this.queryCost,
-        this.latitude,
-        this.longitude,
-        this.resolvedAddress,
-        this.address,
-        this.timezone,
-        this.tzoffset,
-        this.description,
-        this.days,
-        this.alerts,
-        this.stations,
-        this.currentConditions});
+      this.latitude,
+      this.longitude,
+      this.resolvedAddress,
+      this.address,
+      this.timezone,
+      this.tzoffset,
+      this.description,
+      this.days,
+      this.alerts,
+      this.stations,
+      this.currentConditions});
 
   DataModel.fromJson(Map<String, dynamic> json) {
     queryCost = json['queryCost'];
@@ -41,7 +41,7 @@ class DataModel {
         days!.add(new Days.fromJson(v));
       });
     }
-    
+
     stations = json['stations'] != null
         ? new Stations.fromJson(json['stations'])
         : null;
@@ -63,7 +63,7 @@ class DataModel {
     if (this.days != null) {
       data['days'] = this.days!.map((v) => v.toJson()).toList();
     }
-   
+
     if (this.stations != null) {
       data['stations'] = this.stations!.toJson();
     }
@@ -115,42 +115,42 @@ class Days {
 
   Days(
       {this.datetime,
-        this.datetimeEpoch,
-        this.tempmax,
-        this.tempmin,
-        this.temp,
-        this.feelslikemax,
-        this.feelslikemin,
-        this.feelslike,
-        this.dew,
-        this.humidity,
-        this.precip,
-        this.precipprob,
-        this.precipcover,
-        this.preciptype,
-        this.snow,
-        this.snowdepth,
-        this.windgust,
-        this.windspeed,
-        this.winddir,
-        this.pressure,
-        this.cloudcover,
-        this.visibility,
-        this.solarradiation,
-        this.solarenergy,
-        this.uvindex,
-        this.severerisk,
-        this.sunrise,
-        this.sunriseEpoch,
-        this.sunset,
-        this.sunsetEpoch,
-        this.moonphase,
-        this.conditions,
-        this.description,
-        this.icon,
-        this.stations,
-        this.source,
-        this.hours});
+      this.datetimeEpoch,
+      this.tempmax,
+      this.tempmin,
+      this.temp,
+      this.feelslikemax,
+      this.feelslikemin,
+      this.feelslike,
+      this.dew,
+      this.humidity,
+      this.precip,
+      this.precipprob,
+      this.precipcover,
+      this.preciptype,
+      this.snow,
+      this.snowdepth,
+      this.windgust,
+      this.windspeed,
+      this.winddir,
+      this.pressure,
+      this.cloudcover,
+      this.visibility,
+      this.solarradiation,
+      this.solarenergy,
+      this.uvindex,
+      this.severerisk,
+      this.sunrise,
+      this.sunriseEpoch,
+      this.sunset,
+      this.sunsetEpoch,
+      this.moonphase,
+      this.conditions,
+      this.description,
+      this.icon,
+      this.stations,
+      this.source,
+      this.hours});
 
   Days.fromJson(Map<String, dynamic> json) {
     datetime = json['datetime'];
@@ -271,30 +271,30 @@ class Hours {
 
   Hours(
       {this.datetime,
-        this.datetimeEpoch,
-        this.temp,
-        this.feelslike,
-        this.humidity,
-        this.dew,
-        this.precip,
-        this.precipprob,
-        this.snow,
-        this.snowdepth,
-        this.preciptype,
-        this.windgust,
-        this.windspeed,
-        this.winddir,
-        this.pressure,
-        this.visibility,
-        this.cloudcover,
-        this.solarradiation,
-        this.solarenergy,
-        this.uvindex,
-        this.severerisk,
-        this.conditions,
-        this.icon,
-        this.stations,
-        this.source});
+      this.datetimeEpoch,
+      this.temp,
+      this.feelslike,
+      this.humidity,
+      this.dew,
+      this.precip,
+      this.precipprob,
+      this.snow,
+      this.snowdepth,
+      this.preciptype,
+      this.windgust,
+      this.windspeed,
+      this.winddir,
+      this.pressure,
+      this.visibility,
+      this.cloudcover,
+      this.solarradiation,
+      this.solarenergy,
+      this.uvindex,
+      this.severerisk,
+      this.conditions,
+      this.icon,
+      this.stations,
+      this.source});
 
   Hours.fromJson(Map<String, dynamic> json) {
     datetime = json['datetime'];
@@ -390,13 +390,13 @@ class VIAR {
 
   VIAR(
       {this.distance,
-        this.latitude,
-        this.longitude,
-        this.useCount,
-        this.id,
-        this.name,
-        this.quality,
-        this.contribution});
+      this.latitude,
+      this.longitude,
+      this.useCount,
+      this.id,
+      this.name,
+      this.quality,
+      this.contribution});
 
   VIAR.fromJson(Map<String, dynamic> json) {
     distance = json['distance'];
@@ -430,12 +430,12 @@ class CurrentConditions {
   dynamic feelslike;
   dynamic humidity;
   dynamic dew;
-  Null? precip;
+  dynamic precip;
   dynamic precipprob;
   dynamic snow;
   dynamic snowdepth;
-  Null? preciptype;
-  Null? windgust;
+  dynamic preciptype;
+  dynamic? windgust;
   dynamic windspeed;
   dynamic winddir;
   dynamic pressure;
@@ -456,34 +456,34 @@ class CurrentConditions {
 
   CurrentConditions(
       {this.datetime,
-        this.datetimeEpoch,
-        this.temp,
-        this.feelslike,
-        this.humidity,
-        this.dew,
-        this.precip,
-        this.precipprob,
-        this.snow,
-        this.snowdepth,
-        this.preciptype,
-        this.windgust,
-        this.windspeed,
-        this.winddir,
-        this.pressure,
-        this.visibility,
-        this.cloudcover,
-        this.solarradiation,
-        this.solarenergy,
-        this.uvindex,
-        this.conditions,
-        this.icon,
-        this.stations,
-        this.source,
-        this.sunrise,
-        this.sunriseEpoch,
-        this.sunset,
-        this.sunsetEpoch,
-        this.moonphase});
+      this.datetimeEpoch,
+      this.temp,
+      this.feelslike,
+      this.humidity,
+      this.dew,
+      this.precip,
+      this.precipprob,
+      this.snow,
+      this.snowdepth,
+      this.preciptype,
+      this.windgust,
+      this.windspeed,
+      this.winddir,
+      this.pressure,
+      this.visibility,
+      this.cloudcover,
+      this.solarradiation,
+      this.solarenergy,
+      this.uvindex,
+      this.conditions,
+      this.icon,
+      this.stations,
+      this.source,
+      this.sunrise,
+      this.sunriseEpoch,
+      this.sunset,
+      this.sunsetEpoch,
+      this.moonphase});
 
   CurrentConditions.fromJson(Map<String, dynamic> json) {
     datetime = json['datetime'];

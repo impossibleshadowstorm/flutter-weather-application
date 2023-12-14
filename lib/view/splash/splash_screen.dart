@@ -16,11 +16,31 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     SplashServices.getApiData();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Image.asset(ImageAssets.nightStarRain,height: 200,width: 200,),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: Image.asset(
+              ImageAssets.heavyRain,
+              height: 200,
+              width: 200,
+            ),
+          ),
+          const SizedBox(height: 20),
+          const Text(
+            "Weather App",
+            style: TextStyle(
+              height: 0,
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 25,
+            ),
+          )
+        ],
       ),
     );
   }
